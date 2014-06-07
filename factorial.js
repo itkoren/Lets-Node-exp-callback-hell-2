@@ -32,6 +32,6 @@ setTimeout(function(){
     console.log("TIMEOUT 0");
 }, 0);
 
-factorial({ n: 5, completed: function(err, result) {
+factorial({ n: 50, completed: function(err, result) {
     console.log("COMPLETED:" + result);
 }});
