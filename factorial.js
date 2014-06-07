@@ -20,9 +20,6 @@ var factorial = co(function *(options) {
 
     var factor = 1;
     for (var i = 0; i < n; i++) {
-        setTimeout(function(){
-            console.log("TIMEOUT 0");
-        }, 0);
         factor = yield thunkFact(factor, i + 1);
     }
 
@@ -31,10 +28,10 @@ var factorial = co(function *(options) {
     });
 });
 
-factorial({ n: 5, completed: function(err, result) {
-    console.log("COMPLETED:" + result);
-}});
-
 setTimeout(function(){
     console.log("TIMEOUT 0");
 }, 0);
+
+factorial({ n: 5, completed: function(err, result) {
+    console.log("COMPLETED:" + result);
+}});
